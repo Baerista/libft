@@ -6,7 +6,7 @@
 /*   By: irhett <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 22:02:27 by irhett            #+#    #+#             */
-/*   Updated: 2017/02/11 17:01:01 by irhett           ###   ########.fr       */
+/*   Updated: 2017/02/11 18:07:04 by irhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ char				*ft_strsub(char const *s, unsigned int start, size_t len);
 int					get_next_line(const int fd, char **line);
 char				*gnl_concat(char *s1, char *s2, int free1, int free2);
 
-void				ft_swap(void *a, void *b);
+void				ft_swap(void *a, void *b, size_t size);
 void				ft_bubblesort_intarr(int *arr, unsigned int len);
 int					ft_findbiggest(int *arr, unsigned int arr_len);
 unsigned int		ft_numwords(char *str, char del);

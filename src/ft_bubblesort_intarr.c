@@ -6,7 +6,7 @@
 /*   By: irhett <irhett@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:07:19 by irhett            #+#    #+#             */
-/*   Updated: 2017/02/11 15:07:28 by irhett           ###   ########.fr       */
+/*   Updated: 2017/02/11 18:07:22 by irhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void			ft_bubblesort_intarr(int *arr, unsigned int arr_len)
 				i++;
 			else
 			{
-				ft_swap(arr[i], arr[i - 1]);
+				ft_swap(&arr[i], &arr[i - 1], sizeof(int));
 				i--;
 			}
 		}

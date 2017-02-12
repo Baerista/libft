@@ -6,7 +6,7 @@
 #    By: irhett <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/12 20:58:56 by irhett            #+#    #+#              #
-#    Updated: 2017/02/11 17:43:58 by irhett           ###   ########.fr        #
+#    Updated: 2017/02/11 18:08:28 by irhett           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME		=	libft.a
 CC			=	gcc
 FLAGS		=	-Wall -Werror -Wextra -c
 LIB			=	ar rc
-RLIBi		=	ranlib
+RLIB		=	ranlib
 SRC_FILE	=	ft_atoi.c ft_bubblesort_intarr.c ft_bzero.c ft_findbiggest.c \
 				ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c \
 				ft_islower.c ft_isprint.c ft_isspace.c ft_isupper.c ft_itoa.c \
@@ -32,25 +32,31 @@ SRC_FILE	=	ft_atoi.c ft_bubblesort_intarr.c ft_bzero.c ft_findbiggest.c \
 				ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtolower.c \
 				ft_strtoupper.c ft_strtrim.c ft_swap.c ft_tolower.c \
 				ft_toupper.c ft_wordlen.c get_next_line.c gnl_concat.c
-SRC_DIR		= 	src
+SRC_DIR		= 	src/
 SRCS		=	$(addprefix $(SRC_DIR), $(SRC_FILE))
 OBJ_FILE	=	$(SRC_FILE:.c=.o)
-OBJ_DIR		=	obj
+OBJ_DIR		=	obj/
 OBJS		=	$(addprefix $(OBJ_DIR), $(OBJ_FILE))
+INC_DIR		=	-I inc/
 
 .PHONY: all clean fclean re
 
 all: $(NAME)
 
-$(NAME):
-	$(CC) $(FLAGS) $(SRCS)
-	$(LIB) $(NAME) $(SRCS_O)
+$(NAME): $(SRCS) | $(OBJS)
+	@$(LIB) $@ $(OBJS)
 	$(RLIB) $(NAME)
 
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c | build
+	@$(CC) $(FLAGS) $(INC_DIR) $^ -o $@
+
 clean:
-	rm -f $(SRCS_O)
+	rm -rf $(OBJ_DIR)
 
 fclean: clean
 	rm -f libft.a
 
 re:	fclean all
+
+build:
+	@mkdir -p $(OBJ_DIR)
