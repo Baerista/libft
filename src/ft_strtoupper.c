@@ -6,16 +6,15 @@
 /*   By: irhett <irhett@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:02:12 by irhett            #+#    #+#             */
-/*   Updated: 2017/02/11 15:02:21 by irhett           ###   ########.fr       */
+/*   Updated: 2017/02/11 16:57:57 by irhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtoupper(char *str)
+void	ft_strtoupper(char *str)
 {
 	if (str)
 		while (*str)
 			*str = ft_toupper(*str);
-	return (str);
 }

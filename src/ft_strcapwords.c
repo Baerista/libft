@@ -6,7 +6,7 @@
 /*   By: irhett <irhett@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 14:52:43 by irhett            #+#    #+#             */
-/*   Updated: 2017/02/11 14:52:49 by irhett           ###   ########.fr       */
+/*   Updated: 2017/02/11 16:10:55 by irhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char			*ft_strcapwords(char *str)
 			if (!ft_isalpha(str[index]))
 				is_first = 1;
 			else
-			{	
+			{
 				correct_letters(is_first, str, index);
 				is_first = 0;
 			}

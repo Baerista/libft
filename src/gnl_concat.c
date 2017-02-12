@@ -6,7 +6,7 @@
 /*   By: irhett <irhett@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:05:41 by irhett            #+#    #+#             */
-/*   Updated: 2017/02/11 15:06:57 by irhett           ###   ########.fr       */
+/*   Updated: 2017/02/11 16:11:20 by irhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,3 @@ char			*gnl_concat(char *s1, char *s2, int free1, int free2)
 	ans[len1 + len2] = '\0';
 	return (ans);
 }
-
