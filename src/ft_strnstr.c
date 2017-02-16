@@ -6,7 +6,7 @@
 /*   By: irhett <irhett@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 11:21:07 by irhett            #+#    #+#             */
-/*   Updated: 2016/11/19 23:36:43 by irhett           ###   ########.fr       */
+/*   Updated: 2017/02/15 18:01:59 by irhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	if (!*little)
 		return ((char*)big);
 	l_len = ft_strlen((char*)little);
+	if (!big)
+		return (NULL);
 	while (lc <= len)
 	{
 		i = 0;

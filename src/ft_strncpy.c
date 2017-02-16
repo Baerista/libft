@@ -6,7 +6,7 @@
 /*   By: irhett <irhett@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 14:01:48 by irhett            #+#    #+#             */
-/*   Updated: 2017/02/11 14:58:48 by irhett           ###   ########.fr       */
+/*   Updated: 2017/02/15 17:46:40 by irhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,22 @@
 
 char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
-	char *temp;
+	char *tmp;
 
-	temp = dst;
-	while (len > 0)
+	tmp = dst;
+	if (dst && src)
 	{
-		if (*src != '\0')
-			*(dst++) = *(src++);
-		else
+		while (len > 0)
 		{
-			*dst = '\0';
-			dst++;
+			if (*src != '\0')
+				*(dst++) = *(src++);
+			else
+			{
+				*dst = '\0';
+				dst++;
+			}
+			len--;
 		}
-		len--;
 	}
-	return (temp);
+	return (tmp);
 }

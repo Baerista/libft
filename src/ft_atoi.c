@@ -6,7 +6,7 @@
 /*   By: irhett <irhett@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 13:33:31 by irhett            #+#    #+#             */
-/*   Updated: 2017/02/11 14:25:01 by irhett           ###   ########.fr       */
+/*   Updated: 2017/02/15 15:26:55 by irhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,7 @@ static int		my_atoi(char *str, int index, int number, int is_negative)
 
 int				ft_atoi(char *str)
 {
-	return (my_atoi(str, 0, 0, 0));
+	if (str)
+		return (my_atoi(str, 0, 0, 0));
+	return (0);
 }

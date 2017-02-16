@@ -6,7 +6,7 @@
 /*   By: irhett <irhett@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:05:41 by irhett            #+#    #+#             */
-/*   Updated: 2017/02/11 16:11:20 by irhett           ###   ########.fr       */
+/*   Updated: 2017/02/15 18:00:01 by irhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,10 @@ char			*gnl_concat(char *s1, char *s2, int free1, int free2)
 	int		len2;
 	char	*ans;
 
-	len1 = 0;
-	len2 = 0;
-	while (s1[len1])
-		len1++;
-	while (s2[len2])
-		len2++;
+	if (!s1 || !s2)
+		return (NULL);
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
 	ans = (char*)malloc(sizeof(char) * (len1 + len2 + 1));
 	if (!ans)
 		return (NULL);

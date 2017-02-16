@@ -6,7 +6,7 @@
 /*   By: irhett <irhett@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 16:57:13 by irhett            #+#    #+#             */
-/*   Updated: 2016/11/15 16:03:40 by irhett           ###   ########.fr       */
+/*   Updated: 2017/02/15 17:36:25 by irhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,19 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*temp;
+	char	*tmp;
 
-	temp = NULL;
-	while (*s != '\0')
+	tmp = NULL;
+	if (s)
 	{
+		while (*s != '\0')
+		{
+			if (*s == c)
+				tmp = (char*)s;
+			s++;
+		}
 		if (*s == c)
-			temp = (char*)s;
-		s++;
+			tmp = (char*)s;
 	}
-	if (*s == c)
-		temp = (char*)s;
-	return (temp);
+	return (tmp);
 }

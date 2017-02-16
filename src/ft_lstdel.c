@@ -6,7 +6,7 @@
 /*   By: irhett <irhett@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 19:40:01 by irhett            #+#    #+#             */
-/*   Updated: 2016/11/19 23:40:54 by irhett           ###   ########.fr       */
+/*   Updated: 2017/02/15 15:30:20 by irhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
 	t_list	*lst;
 
-	if (*alst)
+	if (alst && *alst && del)
 	{
 		lst = (*alst)->next;
 		if (lst)

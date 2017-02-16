@@ -6,23 +6,26 @@
 /*   By: irhett <irhett@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/01 20:56:25 by irhett            #+#    #+#             */
-/*   Updated: 2016/11/01 21:33:30 by irhett           ###   ########.fr       */
+/*   Updated: 2017/02/15 17:02:34 by irhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dest, const char *src)
+char	*ft_strcpy(char *dst, const char *src)
 {
 	char	*temp;
 
-	temp = dest;
-	while (*src != '\0')
+	temp = dst;
+	if (src && dst)
 	{
-		*dest = *src;
-		dest++;
-		src++;
+		while (*src != '\0')
+		{
+			*dst = *src;
+			dst++;
+			src++;
+		}
+		*dst = '\0';
 	}
-	*dest = '\0';
 	return (temp);
 }

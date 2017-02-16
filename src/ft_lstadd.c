@@ -6,7 +6,7 @@
 /*   By: irhett <irhett@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 19:43:12 by irhett            #+#    #+#             */
-/*   Updated: 2016/11/13 17:55:56 by irhett           ###   ########.fr       */
+/*   Updated: 2017/02/15 15:29:38 by irhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_lstadd(t_list **alst, t_list *new)
 {
-	new->next = (*alst);
-	*alst = new;
+	if (alst && new)
+	{
+		new->next = (*alst);
+		*alst = new;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: irhett <irhett@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 16:11:47 by irhett            #+#    #+#             */
-/*   Updated: 2017/02/11 16:11:53 by irhett           ###   ########.fr       */
+/*   Updated: 2017/02/15 17:40:04 by irhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,17 @@ unsigned int	ft_wordlen(char *s, char del)
 
 	len = 0;
 	i = 0;
-	while (s[i] == del)
-		i++;
-	while (s[i] != del)
+	if (s)
 	{
-		if (s[i] == '\0')
-			return (len);
-		i++;
-		len++;
+		while (s[i] == del)
+			i++;
+		while (s[i] != del)
+		{
+			if (s[i] == '\0')
+				return (len);
+			i++;
+			len++;
+		}
 	}
 	return (len);
 }

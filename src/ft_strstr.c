@@ -6,7 +6,7 @@
 /*   By: irhett <irhett@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 11:00:41 by irhett            #+#    #+#             */
-/*   Updated: 2016/11/15 15:13:05 by irhett           ###   ########.fr       */
+/*   Updated: 2017/02/15 17:45:27 by irhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,28 @@
 
 char	*ft_strstr(const char *big, const char *little)
 {
-	int		index;
-	char	*temp;
+	int		i;
+	char	*tmp;
 
-	if (*little == '\0')
-		return ((char*)big);
-	while (*big != '\0')
+	if (big && little)
 	{
-		index = 0;
-		if (little[index] == big[index])
+		if (*little == '\0')
+			return ((char*)big);
+		while (*big != '\0')
 		{
-			temp = (char*)big;
-			while (little[index] == big[index])
+			i = 0;
+			if (little[i] == big[i])
 			{
-				index++;
-				if (little[index] == '\0')
-					return (temp);
+				tmp = (char*)big;
+				while (little[i] == big[i])
+				{
+					i++;
+					if (little[i] == '\0')
+						return (tmp);
+				}
 			}
+			big++;
 		}
-		big++;
 	}
 	return (NULL);
 }

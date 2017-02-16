@@ -6,7 +6,7 @@
 /*   By: irhett <irhett@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/31 16:50:15 by irhett            #+#    #+#             */
-/*   Updated: 2017/02/11 14:25:06 by irhett           ###   ########.fr       */
+/*   Updated: 2017/02/15 15:27:46 by irhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,14 @@ void	ft_bzero(void *s, size_t n)
 {
 	char	*temp;
 
-	temp = (char*)s;
-	while (n > 0)
+	if (s)
 	{
-		*temp = 0;
-		temp++;
-		n--;
+		temp = (char*)s;
+		while (n > 0)
+		{
+			*temp = 0;
+			temp++;
+			n--;
+		}
 	}
 }

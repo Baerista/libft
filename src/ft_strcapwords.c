@@ -6,7 +6,7 @@
 /*   By: irhett <irhett@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 14:52:43 by irhett            #+#    #+#             */
-/*   Updated: 2017/02/11 16:10:55 by irhett           ###   ########.fr       */
+/*   Updated: 2017/02/15 16:56:43 by irhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 static void		correct_letters(int is_first, char *c, int i)
 {
-	if (is_first)
-		c[i] = ft_toupper(c[i]);
-	else
-		c[i] = ft_tolower(c[i]);
+	if (c)
+	{
+		if (is_first)
+			c[i] = ft_toupper(c[i]);
+		else
+			c[i] = ft_tolower(c[i]);
+	}
 }
 
 char			*ft_strcapwords(char *str)

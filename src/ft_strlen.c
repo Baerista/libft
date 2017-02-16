@@ -6,7 +6,7 @@
 /*   By: irhett <irhett@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/01 20:25:20 by irhett            #+#    #+#             */
-/*   Updated: 2017/02/11 14:55:19 by irhett           ###   ########.fr       */
+/*   Updated: 2017/02/15 17:28:30 by irhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ size_t	ft_strlen(const char *s)
 	size_t	len;
 
 	len = 0;
-	while (s[len] != '\0')
-		len++;
+	if (s)
+		while (s[len] != '\0')
+			len++;
 	return (len);
 }

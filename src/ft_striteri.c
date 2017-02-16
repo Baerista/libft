@@ -6,7 +6,7 @@
 /*   By: irhett <irhett@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 09:57:41 by irhett            #+#    #+#             */
-/*   Updated: 2016/11/12 21:38:21 by irhett           ###   ########.fr       */
+/*   Updated: 2017/02/15 17:15:07 by irhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	unsigned int	index;
+	unsigned int	i;
 
-	index = 0;
+	i = 0;
 	if (s && f)
 	{
-		while (s[index] != '\0')
+		while (s[i] != '\0')
 		{
-			f(index, s + index);
-			index++;
+			f(i, s + i);
+			i++;
 		}
 	}
 }

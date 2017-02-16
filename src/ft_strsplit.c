@@ -6,13 +6,13 @@
 /*   By: irhett <irhett@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 22:46:27 by irhett            #+#    #+#             */
-/*   Updated: 2017/02/11 15:14:23 by irhett           ###   ########.fr       */
+/*   Updated: 2017/02/15 17:45:18 by irhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char				**sub_split(char c, char *temp, unsigned int num)
+static char				**sub_split(char c, char *tmp, unsigned int num)
 {
 	unsigned int	x;
 	unsigned int	y;
@@ -24,13 +24,13 @@ static char				**sub_split(char c, char *temp, unsigned int num)
 	while (x < num)
 	{
 		y = 0;
-		ans[x] = (char*)malloc(sizeof(char) * (ft_wordlen(temp, c) + 1));
+		ans[x] = (char*)malloc(sizeof(char) * (ft_wordlen(tmp, c) + 1));
 		if (!ans[x])
 			return (NULL);
-		while (*temp == c)
-			temp++;
-		while ((*temp != c) && (*temp != '\0'))
-			ans[x][y++] = *(temp++);
+		while (*tmp == c)
+			tmp++;
+		while ((*tmp != c) && (*tmp != '\0'))
+			ans[x][y++] = *(tmp++);
 		ans[x++][y] = '\0';
 	}
 	ans[x] = NULL;
@@ -39,12 +39,12 @@ static char				**sub_split(char c, char *temp, unsigned int num)
 
 char					**ft_strsplit(char const *s, char c)
 {
-	char			*temp;
+	char			*tmp;
 	unsigned int	num;
 
 	if (!s)
 		return (NULL);
-	temp = *((char**)&s);
-	num = ft_numwords(temp, c);
-	return (sub_split(c, temp, num));
+	tmp = *((char**)&s);
+	num = ft_numwords(tmp, c);
+	return (sub_split(c, tmp, num));
 }

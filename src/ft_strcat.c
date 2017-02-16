@@ -6,7 +6,7 @@
 /*   By: irhett <irhett@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 14:42:04 by irhett            #+#    #+#             */
-/*   Updated: 2017/02/11 14:53:06 by irhett           ###   ########.fr       */
+/*   Updated: 2017/02/15 16:57:35 by irhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,13 @@ char	*ft_strcat(char *restrict s1, const char *restrict s2)
 	char	*temp;
 
 	temp = s1;
-	while (*s1 != '\0')
+	if (s1 && s2)
 	{
-		s1++;
+		while (*s1 != '\0')
+			s1++;
+		while (*s2 != '\0')
+			*(s1++) = *(s2++);
+		*s1 = '\0';
 	}
-	while (*s2 != '\0')
-	{
-		*s1 = *s2;
-		s1++;
-		s2++;
-	}
-	*s1 = '\0';
 	return (temp);
 }

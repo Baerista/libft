@@ -6,7 +6,7 @@
 /*   By: irhett <irhett@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/05 15:17:03 by irhett            #+#    #+#             */
-/*   Updated: 2017/02/11 16:50:15 by irhett           ###   ########.fr       */
+/*   Updated: 2017/02/15 17:40:17 by irhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,23 @@
 
 static int		scan(char *str, int newline)
 {
-	int		index;
+	int		i;
 
-	index = 0;
-	while (str[index] != '\0')
+	i = 0;
+	while (str[i] != '\0')
 	{
-		if (str[index] == '\n' && newline)
-			return (index);
-		index++;
+		if (str[i] == '\n' && newline)
+			return (i);
+		i++;
 	}
 	if (newline)
 		return (-1);
-	return (index);
+	return (i);
 }
 
 static int		copy(char *src, char **dst, char **stat, int fd)
 {
-	int		index;
+	int		i;
 	int		len;
 	int		ret;
 
@@ -39,17 +39,17 @@ static int		copy(char *src, char **dst, char **stat, int fd)
 	while ((src[len] != '\n') && (src[len] != '\0'))
 		len++;
 	dst[0] = (char*)malloc(sizeof(char) * len + 1);
-	index = 0;
-	while ((src[index] != '\n') && (src[index] != '\0'))
+	i = 0;
+	while ((src[i] != '\n') && (src[i] != '\0'))
 	{
-		dst[0][index] = src[index];
-		index++;
+		dst[0][i] = src[i];
+		i++;
 	}
-	dst[0][index] = '\0';
-	if (src[index] == '\n')
+	dst[0][i] = '\0';
+	if (src[i] == '\n')
 	{
 		ret = 1;
-		stat[fd] = gnl_concat(&(src[++index]), "", 0, 0);
+		stat[fd] = gnl_concat(&(src[++i]), "", 0, 0);
 	}
 	free(src);
 	return (ret);
