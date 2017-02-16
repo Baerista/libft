@@ -6,13 +6,25 @@
 /*   By: irhett <irhett@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 11:30:08 by irhett            #+#    #+#             */
-/*   Updated: 2017/02/15 17:38:59 by irhett           ###   ########.fr       */
+/*   Updated: 2017/02/15 18:48:39 by irhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s)
+static size_t	get_len(char *s)
+{
+	size_t	len;
+
+	len = 0;
+	while (s[len])
+		len++;
+	while (ft_isspace(s[--len]))
+		;
+	return (len);
+}
+
+char			*ft_strtrim(char const *s)
 {
 	char	*str;
 	size_t	len;
@@ -26,7 +38,7 @@ char	*ft_strtrim(char const *s)
 		s++;
 	if (*s != '\0')
 	{
-		len = ft_strlen((char*)s);
+		len = get_len((char*)s);
 		str = (char*)malloc(sizeof(char) * (len + 2));
 		if (str)
 			while (i <= len)
