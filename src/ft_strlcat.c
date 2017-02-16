@@ -6,13 +6,13 @@
 /*   By: irhett <irhett@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 20:36:22 by irhett            #+#    #+#             */
-/*   Updated: 2017/02/15 17:28:28 by irhett           ###   ########.fr       */
+/*   Updated: 2017/02/15 18:14:21 by irhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	my_strl(char *dst, char *src, size_t size, unsigned int d)
+static size_t	my_strl(char *dst, const char *src, size_t size, unsigned int d)
 {
 	unsigned int	s;
 	unsigned int	d_len;

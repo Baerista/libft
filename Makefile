@@ -6,7 +6,7 @@
 #    By: irhett <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/12 20:58:56 by irhett            #+#    #+#              #
-#    Updated: 2017/02/11 18:08:28 by irhett           ###   ########.fr        #
+#    Updated: 2017/02/15 18:33:52 by irhett           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,9 +35,9 @@ SRC_FILE	=	ft_atoi.c ft_bubblesort_intarr.c ft_bzero.c ft_findbiggest.c \
 SRC_DIR		= 	src/
 SRCS		=	$(addprefix $(SRC_DIR), $(SRC_FILE))
 OBJ_FILE	=	$(SRC_FILE:.c=.o)
-OBJ_DIR		=	obj/
-OBJS		=	$(addprefix $(OBJ_DIR), $(OBJ_FILE))
-INC_DIR		=	-I inc/
+OBJ_DIR		=	obj
+OBJS		=	$(addprefix $(OBJ_DIR)/, $(OBJ_FILE))
+INC_DIR		=	-I includes/
 
 .PHONY: all clean fclean re
 
@@ -47,7 +47,7 @@ $(NAME): $(SRCS) | $(OBJS)
 	@$(LIB) $@ $(OBJS)
 	$(RLIB) $(NAME)
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c | build
+$(OBJ_DIR)/%.o: $(SRC_DIR)%.c | $(OBJ_DIR)
 	@$(CC) $(FLAGS) $(INC_DIR) $^ -o $@
 
 clean:
@@ -58,5 +58,5 @@ fclean: clean
 
 re:	fclean all
 
-build:
-	@mkdir -p $(OBJ_DIR)
+$(OBJ_DIR):
+	mkdir -p $(OBJ_DIR)

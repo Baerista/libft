@@ -6,7 +6,7 @@
 /*   By: irhett <irhett@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/01 20:33:09 by irhett            #+#    #+#             */
-/*   Updated: 2017/02/15 18:06:14 by irhett           ###   ########.fr       */
+/*   Updated: 2017/02/15 18:12:43 by irhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strdup(const char *str)
 	i = 0;
 	if (!str)
 		return (NULL);
-	length = ft_strlen(str)
+	length = ft_strlen(str);
 	copy = (char*)malloc(sizeof(char) * (length + 1));
 	if (copy)
 	{
