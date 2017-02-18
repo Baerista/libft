@@ -6,7 +6,7 @@
 /*   By: irhett <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 22:02:27 by irhett            #+#    #+#             */
-/*   Updated: 2017/02/11 18:07:04 by irhett           ###   ########.fr       */
+/*   Updated: 2017/02/18 01:19:37 by irhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,5 +105,7 @@ unsigned int		ft_wordlen(char *s, char del);
 char				*ft_strcapwords(char *str);
 char				*ft_strtrim(char const *s);
 char				**ft_strsplit(char const *s, char c);
+
+void				error(char *str);
 
 #endif
