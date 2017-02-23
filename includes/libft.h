@@ -6,7 +6,7 @@
 /*   By: irhett <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 22:02:27 by irhett            #+#    #+#             */
-/*   Updated: 2017/02/18 01:19:37 by irhett           ###   ########.fr       */
+/*   Updated: 2017/02/22 23:14:22 by irhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,6 @@ char				*ft_strcapwords(char *str);
 char				*ft_strtrim(char const *s);
 char				**ft_strsplit(char const *s, char c);
 
-void				error(char *str);
+void				ft_error(char *str);
 
 #endif

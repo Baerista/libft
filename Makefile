@@ -6,7 +6,7 @@
 #    By: irhett <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/12 20:58:56 by irhett            #+#    #+#              #
-#    Updated: 2017/02/16 21:18:58 by irhett           ###   ########.fr        #
+#    Updated: 2017/02/22 23:14:30 by irhett           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ SRC_FILE	=	ft_atoi.c ft_bubblesort_intarr.c ft_bzero.c ft_findbiggest.c \
 				ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtolower.c \
 				ft_strtoupper.c ft_strtrim.c ft_swap.c ft_tolower.c \
 				ft_toupper.c ft_wordlen.c get_next_line.c gnl_concat.c \
-				error.c
+				ft_error.c
 SRC_DIR		= 	src/
 SRCS		=	$(addprefix $(SRC_DIR), $(SRC_FILE))
 OBJ_FILE	=	$(SRC_FILE:.c=.o)
