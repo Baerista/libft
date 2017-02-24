@@ -6,14 +6,15 @@
 /*   By: irhett <irhett@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/16 21:17:29 by irhett            #+#    #+#             */
-/*   Updated: 2017/02/22 23:14:02 by irhett           ###   ########.fr       */
+/*   Updated: 2017/02/24 13:14:42 by irhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_error(char *str)
+int		ft_error(char *str)
 {
 	ft_putstr_fd("Error ", 2);
 	ft_putendl_fd(str, 2);
+	return (1);
 }
