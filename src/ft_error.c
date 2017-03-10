@@ -6,7 +6,7 @@
 /*   By: irhett <irhett@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/16 21:17:29 by irhett            #+#    #+#             */
-/*   Updated: 2017/02/24 13:14:42 by irhett           ###   ########.fr       */
+/*   Updated: 2017/03/09 19:42:56 by irhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_error(char *str)
 {
-	ft_putstr_fd("Error ", 2);
+	ft_putstr_fd("Error: ", 2);
 	ft_putendl_fd(str, 2);
 	return (1);
 }

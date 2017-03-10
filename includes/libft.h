@@ -6,7 +6,7 @@
 /*   By: irhett <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 22:02:27 by irhett            #+#    #+#             */
-/*   Updated: 2017/02/24 13:15:21 by irhett           ###   ########.fr       */
+/*   Updated: 2017/03/09 20:29:53 by irhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,20 @@ typedef struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
+
+typedef struct		s_int_matrix
+{
+	unsigned int	rows;
+	unsigned int	cols;
+	int				**data;
+}					t_int_matrix;
+
+typedef struct		s_double_matrix
+{
+	unsigned int	rows;
+	unsigned int	cols;
+	double			**data;
+}					t_dub_matrix;
 
 int					ft_atoi(char *str);
 char				*ft_itoa(int n);
@@ -107,6 +121,15 @@ char				*ft_strtrim(char const *s);
 char				**ft_strsplit(char const *s, char c);
 
 int					ft_error(char *str);
+
 int					ft_usage(char *name, char *args);
+
+t_int_matrix		*init_int_matrix(void);
+t_int_matrix		*make_int_matrix(unsigned int len, unsigned int wid);
+void				del_int_matrix(t_int_matrix *t);
+
+t_dub_matrix		*init_dub_matrix(void);
+t_dub_matrix		*make_dub_matrix(unsigned int len, unsigned int wid);
+void				del_dub_matrix(t_dub_matrix *t);
 
 #endif
