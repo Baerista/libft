@@ -6,7 +6,7 @@
 /*   By: irhett <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 22:02:27 by irhett            #+#    #+#             */
-/*   Updated: 2017/03/10 20:51:44 by irhett           ###   ########.fr       */
+/*   Updated: 2017/03/10 23:47:12 by irhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,8 +144,8 @@ double				dub_dot_product(double *a, double *b, unsigned int len);
 t_int_matrix		*mult_int_matrix(t_int_matrix *a, t_int_matrix *b);
 t_dub_matrix		*mult_dub_matrix(t_dub_matrix *a, t_dub_matrix *b);
 
-unsigned int		*get_col_from_2d_arr(unsigned int **a, 
-										unsigned int col, 
-										unsigned int len);
+int					*int_col(int **a, unsigned int col, unsigned int len);
+double				*dub_col(double **a, unsigned int col, unsigned int len);
+
 
 #endif

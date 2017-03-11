@@ -6,7 +6,7 @@
 /*   By: irhett <irhett@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/10 22:31:37 by irhett            #+#    #+#             */
-/*   Updated: 2017/03/10 22:35:43 by irhett           ###   ########.fr       */
+/*   Updated: 2017/03/10 23:09:28 by irhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #define A (*a)
 #define B (*b)
 
-void	mult_dub_matrix_scalar(t_dub_matrix *t, double factor)
+void				mult_dub_matrix_scalar(t_dub_matrix *t, double factor)
 {
 	unsigned int	row;
 	unsigned int	col;
@@ -24,7 +24,7 @@ void	mult_dub_matrix_scalar(t_dub_matrix *t, double factor)
 	if (t)
 	{
 		row = 0;
-		while(row < T.rows)
+		while (row < T.rows)
 		{
 			col = 0;
 			while (col < T.cols)
@@ -39,12 +39,9 @@ void	mult_dub_matrix_scalar(t_dub_matrix *t, double factor)
 		ft_error("NULL passsed to mult_dub_matrix_scalar");
 }
 
-t_dub_matrix	*mult_dub_matrix(t_dub_matrix *a, t_dub_matrix *b)
+static t_dub_matrix	*check_errors(t_dub_matrix *a, t_dub_matrix *b)
 {
 	t_dub_matrix	*t;
-	unsigned int	row;
-	unsigned int	col;
-	double			*temp;
 
 	if (!a || !b)
 	{
@@ -57,6 +54,19 @@ t_dub_matrix	*mult_dub_matrix(t_dub_matrix *a, t_dub_matrix *b)
 		return (NULL);
 	}
 	t = make_dub_matrix(A.rows, B.cols);
+	if (!t)
+		return (NULL);
+	return (t);
+}
+
+t_dub_matrix		*mult_dub_matrix(t_dub_matrix *a, t_dub_matrix *b)
+{
+	t_dub_matrix	*t;
+	unsigned int	row;
+	unsigned int	col;
+	double			*temp;
+
+	t = check_errors(a, b);
 	if (!t)
 		return (NULL);
 	row = 0;

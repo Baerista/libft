@@ -6,17 +6,17 @@
 /*   By: irhett <irhett@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/10 21:11:08 by irhett            #+#    #+#             */
-/*   Updated: 2017/03/10 21:18:01 by irhett           ###   ########.fr       */
+/*   Updated: 2017/03/10 23:47:10 by irhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
- *	warning, these check only that the inital pointer is not null.
- *	if LEN is invalid, or if a null pointer exists in the array
- *	problems (shrug)
- */
+** warning, these check only that the inital pointer is not null.
+** if LEN is invalid, or if a null pointer exists in the array
+** problems (shrug)
+*/
 
 int		*int_col(int **arr, unsigned int col, unsigned int len)
 {
