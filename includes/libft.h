@@ -6,7 +6,7 @@
 /*   By: irhett <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 22:02:27 by irhett            #+#    #+#             */
-/*   Updated: 2017/03/09 20:29:53 by irhett           ###   ########.fr       */
+/*   Updated: 2017/03/10 20:51:44 by irhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,5 +131,21 @@ void				del_int_matrix(t_int_matrix *t);
 t_dub_matrix		*init_dub_matrix(void);
 t_dub_matrix		*make_dub_matrix(unsigned int len, unsigned int wid);
 void				del_dub_matrix(t_dub_matrix *t);
+
+void				mult_int_matrix_scalar(t_int_matrix *t, double factor);
+void				plus_int_matrix_scalar(t_int_matrix *t, int factor);
+
+void				mult_dub_matrix_scalar(t_dub_matrix *t, double factor);
+void				plus_dub_matrix_scalar(t_dub_matrix *t, double factor);
+
+int					int_dot_product(int *a, int *b, unsigned int len);
+double				dub_dot_product(double *a, double *b, unsigned int len);
+
+t_int_matrix		*mult_int_matrix(t_int_matrix *a, t_int_matrix *b);
+t_dub_matrix		*mult_dub_matrix(t_dub_matrix *a, t_dub_matrix *b);
+
+unsigned int		*get_col_from_2d_arr(unsigned int **a, 
+										unsigned int col, 
+										unsigned int len);
 
 #endif
