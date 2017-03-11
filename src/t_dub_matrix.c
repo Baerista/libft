@@ -6,13 +6,26 @@
 /*   By: irhett <irhett@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/09 20:20:01 by irhett            #+#    #+#             */
-/*   Updated: 2017/03/09 20:29:50 by irhett           ###   ########.fr       */
+/*   Updated: 2017/03/10 23:59:03 by irhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 #define T (*t)
+#define DELETE_RETURN del_dub_matrix(t); return(NULL)
+
+static void		del_mat_point(t_dub_matrix *t)
+{
+	if (t)
+	{
+		ft_bzero(t, sizeof(t_dub_matrix));
+		free(t);
+		t = NULL;
+	}
+	else
+		ft_error("What the fucking fuck. What the fuck. fuck?");
+}
 
 void			del_dub_matrix(t_dub_matrix *t)
 {
@@ -22,8 +35,8 @@ void			del_dub_matrix(t_dub_matrix *t)
 	{
 		if (T.data)
 		{
-			i = -1;
-			while (++i < T.rows)
+			i = 0;
+			while (i < T.rows)
 			{
 				if (T.data[i])
 				{
@@ -32,13 +45,12 @@ void			del_dub_matrix(t_dub_matrix *t)
 				}
 				else
 					ft_error("Row in del_dub_matrix() is NULL");
+				i++;
 			}
 			ft_bzero(T.data, sizeof(double*) * T.rows);
 			free(T.data);
 		}
-		ft_bzero(t, sizeof(t_dub_matrix));
-		free(t);
-		t = NULL;
+		del_mat_point(t);
 	}
 	else
 		ft_error("Passed NULL to del_dub_matrix()");
@@ -69,21 +81,19 @@ t_dub_matrix	*make_dub_matrix(unsigned int rows, unsigned int cols)
 	if (!T.data)
 	{
 		ft_error("Unable to allocate memory for data in t_dub_matrix");
-		del_dub_matrix(t);
-		return (NULL);
+		DELETE_RETURN;
 	}
-	ft_bzero(T.data, sizeof(double*) * rows);
 	while (T.rows < rows)
 	{
 		T.data[T.rows] = (double*)malloc(sizeof(double) * cols);
 		if (!T.data[T.rows])
 		{
 			ft_error("Unable to allocate memory for row in t_init_matrix");
-			del_dub_matrix(t);
-			return (NULL);
+			DELETE_RETURN;
 		}
 		ft_bzero(T.data[T.rows], sizeof(double) * cols);
 		T.rows++;
 	}
+	T.cols = cols;
 	return (t);
 }

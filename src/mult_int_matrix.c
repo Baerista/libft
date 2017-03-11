@@ -6,7 +6,7 @@
 /*   By: irhett <irhett@student.42.us.org>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/09 21:46:24 by irhett            #+#    #+#             */
-/*   Updated: 2017/03/10 22:36:05 by irhett           ###   ########.fr       */
+/*   Updated: 2017/03/11 00:08:01 by irhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@
 #define A (*a)
 #define B (*b)
 
-void    mult_int_matrix_scalar(t_int_matrix *t, double factor)
+void				mult_int_matrix_scalar(t_int_matrix *t, double factor)
 {
-	unsigned int    row;
-	unsigned int    col;
+	unsigned int	row;
+	unsigned int	col;
 
 	if (t)
 	{
@@ -39,12 +39,9 @@ void    mult_int_matrix_scalar(t_int_matrix *t, double factor)
 		ft_error("NULL passsed to mult_int_matrix_scalar");
 }
 
-t_int_matrix    *mult_int_matrix(t_int_matrix *a, t_int_matrix *b)
+static t_int_matrix	*mult_int_error(t_int_matrix *a, t_int_matrix *b)
 {
-	t_int_matrix    *t;
-	unsigned int    row;
-	unsigned int    col;
-	int             *temp;
+	t_int_matrix	*t;
 
 	if (!a || !b)
 	{
@@ -57,6 +54,19 @@ t_int_matrix    *mult_int_matrix(t_int_matrix *a, t_int_matrix *b)
 		return (NULL);
 	}
 	t = make_int_matrix(A.rows, B.cols);
+	if (!t)
+		return (NULL);
+	return (t);
+}
+
+t_int_matrix		*mult_int_matrix(t_int_matrix *a, t_int_matrix *b)
+{
+	t_int_matrix	*t;
+	unsigned int	row;
+	unsigned int	col;
+	int				*temp;
+
+	t = mult_int_error(a, b);
 	if (!t)
 		return (NULL);
 	row = 0;
