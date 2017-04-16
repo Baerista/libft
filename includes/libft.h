@@ -6,7 +6,7 @@
 /*   By: irhett <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 22:02:27 by irhett            #+#    #+#             */
-/*   Updated: 2017/03/22 20:15:28 by irhett           ###   ########.fr       */
+/*   Updated: 2017/04/15 17:52:09 by irhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ typedef struct		s_double_matrix
 
 int					ft_atoi(char *str);
 char				*ft_itoa(int n);
+char				*ft_itoa_base(int n, unsigned int base);
+unsigned int		ft_pow(unsigned int n, unsigned int exp);
 
 int					ft_isalnum(int c);
 int					ft_isalpha(int c);
