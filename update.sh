@@ -8,5 +8,5 @@ if [ ! -d $DIR/libft ] ; then
 fi
 
 cp Makefile $DIR/libft/
-cp -rf includes/*.h $DIR/libft/includes/
+cp -rf inc/*.h $DIR/libft/inc/
 cp -rf src/*.c $DIR/libft/src/
