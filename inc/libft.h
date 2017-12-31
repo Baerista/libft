@@ -6,7 +6,7 @@
 /*   By: irhett <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 22:02:27 by irhett            #+#    #+#             */
-/*   Updated: 2017/09/11 21:50:23 by irhett           ###   ########.fr       */
+/*   Updated: 2017/12/30 17:13:51 by irhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,6 +129,8 @@ int					ft_error(char *str);
 int					ft_equals(char *s1, char *s2);
 
 int					ft_usage(char *name, char *args);
+
+void				*ft_freeset(void **a, void **b);
 
 t_int_matrix		*init_int_matrix(void);
 t_int_matrix		*make_int_matrix(unsigned int len, unsigned int wid);
