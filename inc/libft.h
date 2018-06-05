@@ -6,7 +6,7 @@
 /*   By: irhett <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 22:02:27 by irhett            #+#    #+#             */
-/*   Updated: 2017/12/30 17:13:51 by irhett           ###   ########.fr       */
+/*   Updated: 2018/06/05 15:07:06 by irhett           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,5 +154,7 @@ t_dub_matrix		*mult_dub_matrix(t_dub_matrix *a, t_dub_matrix *b);
 
 int					*int_col(int **a, unsigned int col, unsigned int len);
 double				*dub_col(double **a, unsigned int col, unsigned int len);
+
+char				**ft_strsplit_pattern(const char *str, int (*f)(int));
 
 #endif
